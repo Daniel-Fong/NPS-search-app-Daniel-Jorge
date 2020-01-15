@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="repos.css" rel="stylesheet" type="text/css" />
+</head>
+<header>
+    <h1>National Parks Vacation Planner</h1>
+</header>
+<body>
+    <form class='park-search'>
+        <label for='states'>State</label>
+        <input type='search' placeholder='e.g. CA, FL' id='states'/>
+        <label for="max">Maximum results to return</label>
+        <input id="max" type="number" value="10" min="1" required/>
+        <input type="submit" value="Go!" />
+    </form>
+    <div class='parks'></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="true"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
