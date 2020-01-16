@@ -5,11 +5,7 @@ const apiKey = 'aOMUjXVBw7kOMNf0HiMrvWG0z9YO6HfAipVf1PPf';
 const searchURL = 'https://developer.nps.gov/api/v1/parks';
 
 const findParks = function(query, maxResults) {
-    let queryString = `limit=${maxResults}&api_key=${apiKey}`;
-    query.forEach(state => {
-        queryString = `stateCode=${state}&`+ queryString;
-        console.log(queryString);
-    });
+    let queryString = `stateCode=${query}&limit=${maxResults}&api_key=${apiKey}`;
     const url = searchURL + '?' + queryString;
     fetch(url)
     .then(response => 
@@ -23,7 +19,7 @@ const watchForm = function() {
     $('form').submit(event => {
         event.preventDefault();
         $('.parks').empty();
-        const states = $('#states').val().split(', ');
+        const states = $('#states').val();
         const maxResults = $('#max').val();
         findParks(states, maxResults);
     });
